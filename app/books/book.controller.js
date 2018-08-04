@@ -9,6 +9,32 @@ const getBooks = (req, res, next) => {
       })
       .catch(err => next(err));
   };
+
+  const getSingleBook = (req, res, next) => {
+    let queryString = 'SELECT * FROM books WHERE book.id = $id';
+    const bookid = req.params.bookid;
+    const authorId = req.params.authorId || null;
+    let queryParams = [bookid];
+
+    if (authorId) {
+      queryString += ' AND books.authorId=$authorId';
+      queryParams = queryParams.concat(authorId);
+    }
+
+    
+    db.one(queryString, queryParams, (err, data) => {
+
+      // handle server error
+      if (err) return next(err);
+    })
+    .then(() => {
+      res.status(200).json({
+        message: 'Book successfully retrieved',
+        data
+      })
+      .catch( err => next(err));
+    })
+  };
   
   const createBook = (req, res, next) => {
     db.none('INSERT INTO books(title, authorId, publishedOn) values(${title}, ${authorId}, ${publishedOn})', req.body)
@@ -18,4 +44,4 @@ const getBooks = (req, res, next) => {
       .catch(err => next(err));
   };
   
-  module.exports = { getBooks, createBook };
+  module.exports = { getBooks, createBook, getSingleBook };
