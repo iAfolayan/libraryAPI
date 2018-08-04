@@ -9,3 +9,9 @@ Run npm install
 * Express
 * PostgreSQL
 * pg-promise
+
+Routes
+All books - api/books
+All authors -  api/authors
+One book - api/books/1
+A book and author - api/books/1?authorId=1
