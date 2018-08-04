@@ -1,6 +1,6 @@
-# libraryAPI
+# LibraryAPI
 
-## Run npm install
+Run npm install
 
 ### This API create a RESTful web service with
 
