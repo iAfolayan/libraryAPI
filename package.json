@@ -1,0 +1,34 @@
+{
+  "name": "libraryapi",
+  "version": "1.0.0",
+  "description": "Testing Library API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iAfolayan/libraryAPI.git"
+  },
+  "dependencies": {
+    "express": "*",
+    "pg-promise": "*",
+    "body-parser": "*",
+    "morgan":"*",
+    "nodemon": "*",
+    "cor": "*",
+    "bluebird":"*"
+  },
+  "keywords": [
+    "Library",
+    "Books",
+    "Authors"
+  ],
+  "author": "Afolayan Isaiah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iAfolayan/libraryAPI/issues"
+  },
+  "homepage": "https://github.com/iAfolayan/libraryAPI#readme"
+}
